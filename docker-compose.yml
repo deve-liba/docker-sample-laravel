@@ -70,7 +70,7 @@ services:
       - "3306:3306"
     volumes:
       - ./docker/db/log:/var/log/mysql
-      - mysql_volume:/var/lib/mysql
+      - laravel_mysql_volume:/var/lib/mysql
     command: mysqld --slow_query_log=0
 
   testdb:
@@ -87,7 +87,7 @@ services:
       - "6306:3306"
     volumes:
       - ./docker/testdb/log:/var/log/mysql
-      - mysql_volume_test:/var/lib/mysql
+      - laravel_mysql_volume_test:/var/lib/mysql
     command: mysqld --slow_query_log=0
 
   phpmyadmin:
@@ -114,5 +114,5 @@ networks:
   app_network:
 
 volumes:
-  mysql_volume:
-  mysql_volume_test:
+  laravel_mysql_volume:
+  laravel_mysql_volume_test:
