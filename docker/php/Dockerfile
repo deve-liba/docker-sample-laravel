@@ -1,10 +1,17 @@
-FROM php:8.1-fpm
+FROM php:8.2-fpm
 
 RUN apt update; \
     apt upgrade -y; \
     apt install -y --no-install-recommends \
             curl \
             git \
+            net-tools \
+            iputils-ping \
+            telnet \
+            iproute2 \
+            procps \
+            lsof \
+            nmap \
             pngquant \
             zip \
             unzip \
@@ -58,5 +65,3 @@ ENV COMPOSER_HOME /composer
 ENV PATH $PATH:/composer/vendor/bin
 
 RUN composer global require "laravel/installer"
-
-RUN apt install -y iputils-ping telnet

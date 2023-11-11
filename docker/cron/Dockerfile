@@ -1,10 +1,17 @@
-FROM php:8.1-fpm
+FROM php:8.2-fpm
 
 RUN apt update; \
     apt upgrade -y; \
     apt install -y --no-install-recommends \
             curl \
             git \
+            net-tools \
+            iputils-ping \
+            telnet \
+            iproute2 \
+            procps \
+            lsof \
+            nmap \
             pngquant \
             zip \
             unzip \
@@ -45,5 +52,3 @@ RUN pecl install -o -f redis \
 RUN apt install -y busybox-static
 
 ENTRYPOINT busybox crond -f -L /dev/stderr
-
-RUN apt install -y iputils-ping telnet

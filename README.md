@@ -10,7 +10,8 @@
 ご利用の際にはTwitterのフォローをお願いします。  
 [@tarotyjp (saburo)](https://twitter.com/tarotyjp)
 
-また、ハッシュタグ `#本気のDockerサンプル` と [本気のDockerサンプル](https://github.com/tarotyjp/sample-series) のURLと一緒にツイートしていただけると嬉しいです。
+また、ハッシュタグ `#本気のDockerサンプル` と [本気のDockerサンプル](https://github.com/tarotyjp/sample-series)
+のURLと一緒にツイートしていただけると嬉しいです。
 
 ツイートサンプル（コピペOK）
 
@@ -44,7 +45,7 @@ https://github.com/tarotyjp/sample-series
 
 **ご注意**  
 このサンプルはWindows環境で作成しており、Macでの動作確認はしておりません。  
-そのため、とくにM1/M2シリーズのMacではエラーが発生する可能性もあります。  
+そのため、とくにM1/M2シリーズのMacではエラーが発生する可能性もあります。
 
 ## 利用されるバージョン
 
@@ -53,16 +54,16 @@ https://github.com/tarotyjp/sample-series
 
 | 環境      | バージョン | 補足                                     |
 |---------|-------|----------------------------------------|
-| PHP     | 8.1   | `./src/learning` 配下で実装してください           |
-| MySQL   | 5.7   | phpMyAdminを使うと便利です                     |
+| PHP     | 8.2   | `./src/learning` 配下で実装してください           |
+| MySQL   | 8.2   | phpMyAdminを使うと便利です                     |
 | Nginx   | 1.20  | DocumentRoot は `./src/learning/public` |
-| Laravel | 9.x   | 2022年2月時点の最新                           |
+| Laravel | 10.x  | 2023年11月時点の最新                          |
 
-PHPのバージョンは2022年2月時点のLaravel最新バージョンであるv9に併せて設定してあります。  
+PHPのバージョンは2023年11月時点のLaravel最新バージョンであるv10に併せて設定してあります。  
 学習したいLaravelのバージョンに合わせて `./docker/php/Dockerfile` を修正してください。
 
 Laravelのバージョンに対応するPHPバージョンは下記公式情報で確認できます。  
-[Laravel Release Notes#Support Policy](https://laravel.com/docs/8.x/releases#support-policy)
+[Laravel Release Notes#Support Policy](https://laravel.com/docs/10.x/releases#support-policy)
 
 Laravelの調べ物をする際、５系も多くヒットしますため５系で学習される方も多いと思いますが、５系は公式ページに情報がないためQiita記事を載せておきます。  
 [Laravel リリース・サポート期限
@@ -79,11 +80,12 @@ Laravelの調べ物をする際、５系も多くヒットしますため５系�
 全てのバージョンの組み合わせは試していません。  
 下記のみ簡単な動作確認をしています。
 
-| Laravelバージョン | 利用するPHPバージョン     |補足|
-|--------------|------------------|---|
-| Laravel 9    | FROM php:8.1-fpm |2022年2月時点の最新|
-| Laravel 6    | FROM php:8.0-fpm      |2019年9月リリースのLTS|
-| Laravel 5.5  | FROM php:7.4-fpm      |2017年8月リリースのLTS|
+| Laravelバージョン | 利用するPHPバージョン     | 補足              |
+|--------------|------------------|-----------------|
+| Laravel 10   | FROM php:8.1-fpm | 2023年11月時点の最新   |
+| Laravel 9    | FROM php:8.1-fpm |                 |
+| Laravel 6    | FROM php:8.0-fpm | 2019年9月リリースのLTS |
+| Laravel 5.5  | FROM php:7.4-fpm | 2017年8月リリースのLTS |
 
 ---
 
@@ -137,7 +139,7 @@ FROM php:8.0-fpm
 日本語でコメントを書いてあります。
 
 このシェルを利用したい方は下記を実行してください。
-
+    
 ```shell
 docker-compose exec php bash ../laravel.sh
 ```
@@ -145,7 +147,6 @@ docker-compose exec php bash ../laravel.sh
 DBの接続に成功すれば下記のように表示されます。
 
 ![接続成功](images/db_ok.jpg)
-
 
 ## 環境を作り直したい時
 
@@ -199,7 +200,7 @@ bash docker-down-all.sh
 
 定期実行が不要な場合は確認不要です。
 
-確認するためには下記手順を踏んでください。  
+確認するためには下記手順を実行してください。  
 各作業の詳細は後述します。
 
 1. `cron_root.txt` を修正

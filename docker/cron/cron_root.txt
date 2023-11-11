@@ -1,2 +1,3 @@
 # test command
 # * * * * * date >> /tmp/cron/test.txt
+* * * * * cd /var/www/learning && php artisan schedule:run >> /dev/null 2>&1
