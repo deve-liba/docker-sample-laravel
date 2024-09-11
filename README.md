@@ -54,7 +54,7 @@ https://github.com/tarotyjp/sample-series
 
 | 環境      | バージョン | 補足                                     |
 |---------|-------|----------------------------------------|
-| PHP     | 8.2   | `./src/learning` 配下で実装してください           |
+| PHP     | 8.3   | `./src/learning` 配下で実装してください           |
 | MySQL   | 8.2   | phpMyAdminを使うと便利です                     |
 | Nginx   | 1.20  | DocumentRoot は `./src/learning/public` |
 | Laravel | 10.x  | 2023年11月時点の最新                          |
@@ -62,15 +62,14 @@ https://github.com/tarotyjp/sample-series
 PHPのバージョンは2023年11月時点のLaravel最新バージョンであるv10に併せて設定してあります。  
 学習したいLaravelのバージョンに合わせて `./docker/php/Dockerfile` を修正してください。
 
-Laravelのバージョンに対応するPHPバージョンは下記公式情報で確認できます。  
-[Laravel Release Notes#Support Policy](https://laravel.com/docs/10.x/releases#support-policy)
+Laravelのバージョンに対応するPHPバージョンは下記で確認できます。  
+古いLaravelバージョンは２つ目のLaravel Versionsでご確認ください。
 
-Laravelの調べ物をする際、５系も多くヒットしますため５系で学習される方も多いと思いますが、５系は公式ページに情報がないためQiita記事を載せておきます。  
-[Laravel リリース・サポート期限
-](https://qiita.com/kidatti/items/c293ad9345c1130f150e)
+- [Laravel公式: Laravel Release Notes#Support Policy](https://laravel.com/docs/11.x/releases#support-policy)
+- [Laravel Versions(Laravelバージョンまとめサイト)](https://laravelversions.com/ja)
 
-しかし、これから学習をするのであれば、公式サイトに記載のあるバージョンを利用することを **強く推奨** します。  
-そして、可能な限り最新での学習を強く推奨します。
+これから学習をするのであれば、公式サイトに記載のあるバージョンを利用することを **強く推奨** します。  
+そして、可能な限り最新での学習を推奨します。
 
 ### 修正例） Laravel6で学習したい場合
 
