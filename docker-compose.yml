@@ -22,15 +22,15 @@ services:
             - app_network
         environment:
             MYSQL_HOST: db
-            MYSQL_DATABASE: training_laravel
-            MYSQL_USER: training_laravel
-            MYSQL_PASSWORD: training_laravel
+            MYSQL_DATABASE: learning_laravel
+            MYSQL_USER: learning_laravel
+            MYSQL_PASSWORD: learning_laravel
             LARAVEL_VERSION: "*"
         volumes:
             - ./docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini
             - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
             - ./src:/var/www
-        working_dir: /var/www/training
+        working_dir: /var/www/learning
         depends_on:
             - db
             - testdb
@@ -42,15 +42,15 @@ services:
             - app_network
         environment:
             MYSQL_HOST: db
-            MYSQL_DATABASE: training_laravel
-            MYSQL_USER: training_laravel
-            MYSQL_PASSWORD: training_laravel
+            MYSQL_DATABASE: learning_laravel
+            MYSQL_USER: learning_laravel
+            MYSQL_PASSWORD: learning_laravel
         volumes:
             - ./docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini # php の php.iniを参照
             - ./docker/cron/cron_root.txt:/var/spool/cron/crontabs/root
             - ./docker/cron/tmp:/tmp/cron
             - ./src:/var/www
-        working_dir: /var/www/training
+        working_dir: /var/www/learning
         depends_on:
             - db
             - testdb
@@ -69,7 +69,7 @@ services:
             - ./docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini
             - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
             - ./src:/var/www
-        working_dir: /var/www/training
+        working_dir: /var/www/learning
         profiles:
             - worker
 
@@ -80,9 +80,9 @@ services:
             - app_network
         environment:
             MYSQL_HOST: db
-            MYSQL_DATABASE: training_laravel
-            MYSQL_USER: training_laravel
-            MYSQL_PASSWORD: training_laravel
+            MYSQL_DATABASE: learning_laravel
+            MYSQL_USER: learning_laravel
+            MYSQL_PASSWORD: learning_laravel
             MYSQL_ROOT_PASSWORD: root
         ports:
             - "3306:3306"
@@ -97,9 +97,9 @@ services:
         networks:
             - app_network
         environment:
-            MYSQL_DATABASE: training_laravel_test
-            MYSQL_USER: training_laravel
-            MYSQL_PASSWORD: training_laravel
+            MYSQL_DATABASE: learning_laravel_test
+            MYSQL_USER: learning_laravel
+            MYSQL_PASSWORD: learning_laravel
             MYSQL_ROOT_PASSWORD: root
         ports:
             - "6306:3306"

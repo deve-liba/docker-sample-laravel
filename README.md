@@ -121,8 +121,8 @@ FROM php:8.0-fpm
 
 リポジトリをクローンして下記を実行してください。
 
-1. docker-compose build --no-cache
-2. docker-compose up -d
+1. docker compose build --no-cache
+2. docker compose up -d
 
 また、Laravelプロジェクトの作成をサポートするシェルも用意してあります。  
 下記１行を実行すると `./src/learning` に 作成されます。
@@ -140,7 +140,7 @@ FROM php:8.0-fpm
 このシェルを利用したい方は下記を実行してください。
     
 ```shell
-docker-compose exec php bash ../laravel.sh
+docker compose exec php bash ../laravel.sh
 ```
 
 DBの接続に成功すれば下記のように表示されます。
@@ -239,7 +239,7 @@ dockerコンテナを再起動します。
 下記を実行して自動実行を確認します。
 
 ```shell
-docker-compose exec cron cat /tmp/cron/test.txt
+docker compose exec cron cat /tmp/cron/test.txt
 ```
 
 下記のように１分おきに出力されていればOK
